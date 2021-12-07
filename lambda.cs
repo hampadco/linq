@@ -9,7 +9,23 @@ namespace sample1
         static void Main(string[] args)
         {
             int[] number =new int[]{6,5,8,0,12,80,3};
-            
+            //existing by any() lambda
+             bool check=number.Any(a => a==5);
+             bool check2=number.Where(a => a==5).Any();
+             System.Console.WriteLine(check);
+
+            ///first or first or defult
+            System.Console.WriteLine("first************"); 
+            var f=number.Where(a=>a==5).FirstOrDefault();
+            System.Console.WriteLine(f);
+
+            //single or singeordefault
+             System.Console.WriteLine("single************"); 
+             try
+             {
+                 var s1=number.Where(a=> a==6).SingleOrDefault();
+                  System.Console.WriteLine(s1);
+             }
             //max
             int max=0;
             foreach (var item in number)
